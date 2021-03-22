@@ -20,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 route::get('/','PagesControl@home');
 route::get('/me','PagesControl@me');
 route::get('/databarang','DataBarang@index');
+route::get('/detailbarang','DatabarangController@index');
+route::get('/detailbarang/{baranng}','DatabarangController@show');
