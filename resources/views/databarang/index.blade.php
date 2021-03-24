@@ -11,7 +11,7 @@
       <th scope="col">SATUAN</th>
       <th scope="col">JNSBRG</th>
       <th scope="col">STOK</th>
-      <th scope="col">AKSi</th>
+   
     </tr>
   </thead>
   <tbody>

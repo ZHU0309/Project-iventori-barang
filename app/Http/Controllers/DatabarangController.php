@@ -28,8 +28,12 @@ class DatabarangController extends Controller
      */
     public function create()
     {
-        //
+ {
+            $baranng = \App\Baranng::all();
+  return view ('detailbarang.create');
     }
+}
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,8 +43,30 @@ class DatabarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+    
+ //**
+//$barang = new Baranng;
+//$barang->KDBRG =$request->KDBRG;
+//$barang->NMBRG =$request->NMBRG;
+//$barang->JNSBRG =$request->JNSBRG;
+//$barang->STOK =$request->STOK;
+//$barang->save();
+
+
+//* returun redirect untuk mengembalikan halaman ke detailbarang   
+//return redirect('/detailbarang');
+
+  Baranng::create([
+'KDBRG' => $request ->KDBRG,
+'NMBRG' => $request ->NMBRG,
+'SATUAN' => $request ->SATUAN,
+'JNSBRG' => $request ->JNSBRG,
+'STOK' => $request ->STOK,
+]);
+return redirect('/detailbarang');
+
+}
+
 
     /**
      * Display the specified resource.
@@ -48,6 +74,8 @@ class DatabarangController extends Controller
      * @param  \App\Baranng  $baranng
      * @return \Illuminate\Http\Response
      */
+    /* show utnuk menmapilkan satu barang
+    */
     public function show(Baranng $baranng)
     {
         
