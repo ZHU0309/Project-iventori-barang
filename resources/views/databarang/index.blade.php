@@ -41,7 +41,11 @@
       <th scope="col">SATUAN</th>
       <th scope="col">JNSBRG</th>
       <th scope="col">STOK</th>
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> komputerkantor/main
     </tr>
   </thead>
   <tbody>

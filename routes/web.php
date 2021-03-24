@@ -19,8 +19,22 @@ use Illuminate\Support\Facades\Route;
  */
 route::get('/','PagesControl@home');
 route::get('/me','PagesControl@me');
+<<<<<<< HEAD
 route::get('/databarang','DataBarang@create');
 route::post('/databarang','DataBarang@store');
+=======
+
+>>>>>>> komputerkantor/main
 route::get('/databarang','DataBarang@index');
+
 route::get('/detailbarang','DatabarangController@index');
+route::post('/detailbarang/','DatabarangController@store');
+route::get('/detailbarang/create','DatabarangController@create'); //*harus diatas route get detal barang {barangg}
+
+
 route::get('/detailbarang/{baranng}','DatabarangController@show');
+
+
+
+
+
