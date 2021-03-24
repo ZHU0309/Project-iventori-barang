@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Mar 2021 pada 19.36
+-- Waktu pembuatan: 24 Mar 2021 pada 18.04
 -- Versi server: 10.4.18-MariaDB
 -- Versi PHP: 8.0.3
 
@@ -125,17 +125,19 @@ CREATE TABLE `tbbarang` (
   `KDBRG` char(7) NOT NULL,
   `NMBRG` char(35) NOT NULL,
   `SATUAN` char(10) NOT NULL,
-  `JNSBRG` char(10) NOT NULL,
-  `STOK` int(11) NOT NULL
+  `JNSBRG` char(255) NOT NULL,
+  `STOK` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='untuk menampung seluruh isi data barang';
 
 --
 -- Dumping data untuk tabel `tbbarang`
 --
 
-INSERT INTO `tbbarang` (`id`, `KDBRG`, `NMBRG`, `SATUAN`, `JNSBRG`, `STOK`) VALUES
-(1, 'CDRABQ1', 'CD 700 MB', 'KEPING', 'CD', 280),
-(2, 'KBKMPS2', 'KEYBOARD KOMIK WINDOWS COMPOTIBLE', 'PCS', 'KEYBOARD', 16);
+INSERT INTO `tbbarang` (`id`, `KDBRG`, `NMBRG`, `SATUAN`, `JNSBRG`, `STOK`, `created_at`, `updated_at`) VALUES
+(13, 'CDRABQ1', 'rokok', 'kardus', 'rokok batangan', 12, '2021-03-24 08:27:47', '2021-03-24 08:27:47'),
+(14, 'KBKMPS4', 'ajinomoto', 'pcs', 'mecin', 12, '2021-03-24 09:56:13', '2021-03-24 09:56:13');
 
 -- --------------------------------------------------------
 
@@ -265,7 +267,7 @@ ALTER TABLE `tbbagian`
 --
 ALTER TABLE `tbbarang`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `KDBRG` (`KDBRG`);
+  ADD UNIQUE KEY `KDBRG` (`KDBRG`) USING BTREE;
 
 --
 -- Indeks untuk tabel `tbdterma`
@@ -334,7 +336,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT untuk tabel `tbbarang`
 --
 ALTER TABLE `tbbarang`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
