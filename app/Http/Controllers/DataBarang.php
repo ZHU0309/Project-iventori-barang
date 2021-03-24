@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Barang;
 
 use Illuminate\Http\Request;
 
@@ -27,9 +28,9 @@ class DataBarang extends Controller
      */
     public function create()
     {
-        //
-    }
-
+    return view('databarang');
+    } 
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -38,7 +39,14 @@ class DataBarang extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $barang= new Barang;
+       $barang->KDBRG =$request->KDBRG;
+       $barang->NMBRG =$request->NMBRG;
+       $barang->SATUAN =$request->SATUAN;
+       $barang->JNSBRG =$request->JNSBRG;
+       $barang->STOK =$request->STOK;
+       
+       $barang->save();
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layout/main')
 @section('judul','Detail Data Barang')
 @section('badan')
-
+<a href="/detailbarang.create" class ="btn btn-primary">Tambah data</a>
 @foreach($detailbarang as $nmbrg)
 
 <ul class="list-group">
