@@ -3,33 +3,7 @@
 @section('badan')
 
 
-<h1 >Tambah Data Barang</h1>
-<form method="POST" action="/databarang">
-@csrf
-  <div class="form-group">
-    <label for="KDBRG">Kode Barang</label>
-    <input type="text" class="form-control" id="KDBRG" placeholder="">
-  </div>
-  <div class="form-group">
-    <label for="NMBRG">Nama Barang</label>
-    <input type="text" class="form-control" id="NMBRG" placeholder="">
-  </div>
-  <div class="form-group">
-  <div class="form-group">
-    <label for="SATUAN">satuan</label>
-    <input type="text" class="form-control" id="SATUAN" placeholder="">
-  </div>
-    <label for="JNSBRG">Jenis Barang</label>
-    <input type="text" class="form-control" id="JNSBRG" placeholder="">
-  </div>
-  <div class="form-group">
-    <label for="STOK">Stok</label>
-    <input type="text" class="form-control" id="STOK" placeholder="">
-  </div>
-  <button type="submit" class="btn btn-primary">Tambah Data</button> 
-</form> 
-
-<!-- <div class="continer">
+<div class="continer">
 
   <table class="table table-bordered">
   
@@ -41,11 +15,7 @@
       <th scope="col">SATUAN</th>
       <th scope="col">JNSBRG</th>
       <th scope="col">STOK</th>
-<<<<<<< HEAD
-    
-=======
-   
->>>>>>> komputerkantor/main
+
     </tr>
   </thead>
   <tbody>
@@ -65,4 +35,4 @@
 
 
 </table>
-</div> -->
+</div>

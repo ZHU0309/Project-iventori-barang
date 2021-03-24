@@ -1,15 +1,13 @@
 @extends('layout/main')
 @section('judul','Detail Data Barang')
 @section('badan')
-<<<<<<< HEAD
-<a href="/detailbarang.create" class ="btn btn-primary">Tambah data</a>
-=======
+
 <h2>Tambah Data Barang </h2>
 <div class="continer">
 <a href="/detailbarang/create" class="btn btn-primary">Tambah Data</a>
 <br>
 <br>
->>>>>>> komputerkantor/main
+
 @foreach($detailbarang as $nmbrg)
 <div class="container">
 <ul class="list-group">
