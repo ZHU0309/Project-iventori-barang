@@ -28,10 +28,10 @@ class DatabarangController extends Controller
      */
     public function create()
     {
- {
-            $baranng = \App\Baranng::all();
-  return view ('detailbarang.create');
-    }
+            {
+         /*    $baranng = \App\Baranng::all(); */
+            return view ('detailbarang.create');
+             }
 }
 
 
@@ -43,7 +43,7 @@ class DatabarangController extends Controller
      */
     public function store(Request $request)
     {
-    
+
  //**
 //$barang = new Baranng;
 //$barang->KDBRG =$request->KDBRG;
@@ -52,6 +52,13 @@ class DatabarangController extends Controller
 //$barang->STOK =$request->STOK;
 //$barang->save();
 
+$request->validate([
+'KDBRG' => 'required|size:7|unique:tbbarang',
+'NMBRG' => 'required',
+'SATUAN' => 'required',
+'JNSBRG' => 'required',
+'STOK' => 'required|numeric',
+]);
 
 //* returun redirect untuk mengembalikan halaman ke detailbarang   
 //return redirect('/detailbarang');
@@ -63,11 +70,8 @@ class DatabarangController extends Controller
 'JNSBRG' => $request ->JNSBRG,
 'STOK' => $request ->STOK,
 ]);
-return redirect('/detailbarang');
-
-}
-
-
+return redirect('/detailbarang')->with('status', 'Data Barang Berhasil Ditambahkan ');
+  }
     /**
      * Display the specified resource.
      *
@@ -90,7 +94,12 @@ return redirect('/detailbarang');
      */
     public function edit(Baranng $baranng)
     {
-        //
+        {
+         /*    $baranng = \App\Baranng::all(); */
+        return view('detailbarang.update',['detailbarang'=>$baranng]);
+     /* return view('detailbarang.update'); */
+   
+    }
     }
 
     /**
@@ -102,7 +111,37 @@ return redirect('/detailbarang');
      */
     public function update(Request $request, Baranng $baranng)
     {
-        //
+       
+        $request->validate([
+           
+            'NMBRG' => 'required',
+            'SATUAN' => 'required',
+            'JNSBRG' => 'required',
+            'STOK' => 'required|numeric',
+            ]);
+
+
+            Baranng::where('id',$baranng->id)
+                -> 
+                update([
+                   
+                    'NMBRG' => $request ->NMBRG,
+                    'SATUAN' => $request ->SATUAN,
+                    'JNSBRG' => $request ->JNSBRG,
+                    'STOK' => $request ->STOK
+                    
+
+
+
+                ]);
+
+                return redirect('/detailbarang')->with('status', 'Data Barang Berhasil Diubah ');  
+
+            
+
+
+
+                
     }
 
     /**
@@ -113,6 +152,12 @@ return redirect('/detailbarang');
      */
     public function destroy(Baranng $baranng)
     {
-        //
+        Baranng::destroy($baranng->id);
+        return redirect('/detailbarang')->with('status', 'Data Barang Berhasil Dihapus ');
     }
+
+
+
+
+
 }

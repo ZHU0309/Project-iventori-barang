@@ -10,4 +10,5 @@ class Baranng extends Model
 
     protected $primaryKey = 'id';
     protected $fillable =['KDBRG','NMBRG','SATUAN','JNSBRG','STOK'];
+    
 }
